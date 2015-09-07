@@ -6,8 +6,10 @@ install:
 - NOTEBOOKS="science/Transients/"
 - d=`TZ=":US/Pacific" date +%y-%m-%d----%H:%M:%S`
 script:
+- echo `ls ./scripts/`
 - df -kh .
 - wget https://raw.githubusercontent.com/marcusbooyah/IPy-CI/master/scripts/dl.sh -P ./scripts
+- echo `ls ./scripts/`
 - source ./scripts/sims_maf_setup.sh
 - source ./scripts/dl.sh
 - source ./scripts/prepare.sh
