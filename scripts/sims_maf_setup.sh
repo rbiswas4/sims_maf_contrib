@@ -6,3 +6,5 @@ conda install lsst-sims-maf > /dev/null 2>&1
 
 source eups-setups.sh
 setup sims_maf
+
+
