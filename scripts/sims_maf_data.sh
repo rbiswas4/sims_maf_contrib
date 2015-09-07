@@ -14,4 +14,9 @@ for dbfile in `ls *.db`; do
     mv $dbfile ./data; 
     ln -s ./data/$dbfile ./science/Transients/$dbfile;
 done
+echo 'Check cleanup'
+echo `ls `
+echo 'Check that ./science/Transients/ hs the required db'
 echo `ls ./science/Transients/*.db`
+echo 'Check available disk space'
+echo `du -kh`
