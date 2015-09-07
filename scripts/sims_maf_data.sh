@@ -9,7 +9,11 @@ echo 'Downloads of opsim runs done'
 echo `ls `
 gunzip *.gz
 echo 'unzip done'
-for dbfile in `ls *.db`; do echo $dbfile; do mv $dbfile ./data; do ln -s ./science/Transients/$dbfile ./data/$dbfile; done
+for dbfile in `ls *.db`; do 
+    echo $dbfile; 
+    mv $dbfile ./data; 
+    ln -s ./science/Transients/$dbfile ./data/$dbfile;
+done
 echo `ls ./science/Transients/*.sb`
 rm *.gz
 
