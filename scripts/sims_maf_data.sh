@@ -19,4 +19,4 @@ echo `ls `
 echo 'Check that ./science/Transients/ hs the required db'
 echo `ls ./science/Transients/*.db`
 echo 'Check available disk space'
-du -kh .
+df -kh .

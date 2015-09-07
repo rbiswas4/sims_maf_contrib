@@ -4,7 +4,7 @@ conda config --add channels http://eupsforge.net/conda/dev
 conda config --set always_yes true
 echo $PWD
 echo 'checking disk space availability'
-du -kh . 
+df -kh . 
 echo 'installing sims-maf'
 
 conda install lsst-sims-maf > /dev/null 2>&1
