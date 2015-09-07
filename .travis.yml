@@ -10,6 +10,7 @@ script:
 - df -kh .
 - wget https://raw.githubusercontent.com/marcusbooyah/IPy-CI/master/scripts/dl.sh -P ./scripts
 - echo `ls ./scripts/`
+- source ./scripts/sims_maf_data.sh
 - source ./scripts/dl.sh
 - source ./scripts/prepare.sh
 - export PATH="$PWD/miniconda/bin:$PATH"
