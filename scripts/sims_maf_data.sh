@@ -14,7 +14,4 @@ for dbfile in `ls *.db`; do
     mv $dbfile ./data; 
     ln -s ./data/$dbfile ./science/Transients/$dbfile;
 done
-echo `ls ./science/Transients/*.sb`
-rm *.gz
-
-
+echo `ls ./science/Transients/*.db`
