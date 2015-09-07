@@ -8,6 +8,7 @@ install:
 script:
 - df -kh .
 - wget https://raw.githubusercontent.com/marcusbooyah/IPy-CI/master/scripts/dl.sh -P ./scripts
+- source ./scripts/sims_maf_setup.sh
 - source ./scripts/dl.sh
 - source ./scripts/prepare.sh
 - export PATH="$PWD/miniconda/bin:$PATH"
