@@ -12,7 +12,7 @@ echo 'unzip done'
 for dbfile in `ls *.db`; do 
     echo $dbfile; 
     mv $dbfile ./data; 
-    ln -s ./science/Transients/$dbfile ./data/$dbfile;
+    ln -s ./data/$dbfile ./science/Transients/$dbfile;
 done
 echo `ls ./science/Transients/*.sb`
 rm *.gz
