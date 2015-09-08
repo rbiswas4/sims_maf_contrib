@@ -10,7 +10,7 @@ mkdir -p ./data
 ## gunzip *.gz
 ## echo 'unzip done'
 for dbfile in `ls tutorials/*.db`; do 
-    file = `basename $dbfile`; 
+    file=`basename $dbfile`; 
     echo $file
     ## mv $dbfile ./data; 
     ln -s $dbfile ./science/Transients/$file;
