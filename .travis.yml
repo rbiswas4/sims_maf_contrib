@@ -28,7 +28,8 @@ deploy:
     secure: G3bMTgAsBJf6845m6r6Rzj4n/jo1d3sswa97zznKTRS7iPSv3W/G31fOtqNfkKD803/frwsznopTO7EjELFVpnhJgZueMu0Iy2P4diUtuMvKSjBYWKv0nceFAWX3pSLMfDwdPYWz/S5TyVmSoPe8DT5X/H3f0o7efxDz8QmX9Hk=
   bucket: rbiswaswithlsst
   local-dir: fails
-  acl: ''
+  upload-dir: "$d"
+  # acl: ''
   on:
     repo: rbiswas4/sims_maf_contrib
     branch: ci-noPR
