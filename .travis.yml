@@ -1,27 +1,34 @@
 language: python
 python:
-    - 2.7
+- 2.7
 install:
-    - echo $TRAVIS_PULL_REQUEST
-    - NOTEBOOKS="science/Transients/"
-    - d=`TZ=":US/Pacific" date +%y-%m-%d----%H:%M:%S`
+- echo $TRAVIS_PULL_REQUEST
+- NOTEBOOKS="science/Transients/"
+- d=`TZ=":US/Pacific" date +%y-%m-%d----%H:%M:%S`
 script:
-    - echo $PWD
-    - echo `ls ./scripts/`
-    - df -kh .
-    - wget https://raw.githubusercontent.com/marcusbooyah/IPy-CI/master/scripts/dl.sh -P ./scripts
-    - echo `ls ./scripts/`
-    - source ./scripts/dl.sh
-    - source ./scripts/prepare.sh
-    - export PATH="$PWD/miniconda/bin:$PATH"
-    - source ./scripts/sims_maf_setup.sh
-    - source ./scripts/getfiles.sh
-    - source ./scripts/sims_maf_data.sh
-    - source ./scripts/runipy.sh
+- echo $PWD
+- echo `ls ./scripts/`
+- df -kh .
+- wget https://raw.githubusercontent.com/marcusbooyah/IPy-CI/master/scripts/dl.sh
+  -P ./scripts
+- echo `ls ./scripts/`
+- source ./scripts/dl.sh
+- source ./scripts/prepare.sh
+- export PATH="$PWD/miniconda/bin:$PATH"
+- source ./scripts/sims_maf_setup.sh
+- source ./scripts/getfiles.sh
+- source ./scripts/sims_maf_data.sh
+- source ./scripts/runipy.sh
 after_deploy:
-    - exit $ERROR
+- exit $ERROR
 deploy:
-    on:
-        repo: rbiswas4/sims_maf_contrib
-        all_branches: true
-
+  provider: s3
+  access_key_id: AKIAIYCAQSKSL463N6ZA
+  secret_access_key:
+    secure: G3bMTgAsBJf6845m6r6Rzj4n/jo1d3sswa97zznKTRS7iPSv3W/G31fOtqNfkKD803/frwsznopTO7EjELFVpnhJgZueMu0Iy2P4diUtuMvKSjBYWKv0nceFAWX3pSLMfDwdPYWz/S5TyVmSoPe8DT5X/H3f0o7efxDz8QmX9Hk=
+  bucket: rbiswaswithlsst
+  local-dir: fails
+  acl: ''
+  on:
+    repo: LSST-nonproject/sims_maf_contrib
+    branch: ci-noPR
