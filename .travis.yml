@@ -30,5 +30,5 @@ deploy:
   local-dir: fails
   acl: ''
   on:
-    repo: LSST-nonproject/sims_maf_contrib
+    repo: rbiswas4/sims_maf_contrib
     branch: ci-noPR
