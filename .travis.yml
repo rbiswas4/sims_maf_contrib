@@ -27,6 +27,7 @@ deploy:
   secret_access_key:
     secure: G3bMTgAsBJf6845m6r6Rzj4n/jo1d3sswa97zznKTRS7iPSv3W/G31fOtqNfkKD803/frwsznopTO7EjELFVpnhJgZueMu0Iy2P4diUtuMvKSjBYWKv0nceFAWX3pSLMfDwdPYWz/S5TyVmSoPe8DT5X/H3f0o7efxDz8QmX9Hk=
   bucket: rbiswaswithlsst
+  skip_cleanup: true
   local-dir: fails
   upload-dir: "$d"
   # acl: ''
