@@ -25,12 +25,11 @@ deploy:
   provider: s3
   access_key_id: AKIAIYCAQSKSL463N6ZA
   secret_access_key:
-    secure: G3bMTgAsBJf6845m6r6Rzj4n/jo1d3sswa97zznKTRS7iPSv3W/G31fOtqNfkKD803/frwsznopTO7EjELFVpnhJgZueMu0Iy2P4diUtuMvKSjBYWKv0nceFAWX3pSLMfDwdPYWz/S5TyVmSoPe8DT5X/H3f0o7efxDz8QmX9Hk=
+    secure: F4YEAfmLJ91GTBMl4BYQuCUS3k/I9GnsfmFS1ACiIuLFhSrmZQZV3xRCHM9L+T4TrU+l031CvvCh/s968xvTxdMgwkp1RAPpSrM/0n/6Nrw6MD72rO2V5YBEy/uuinanr+p7IA963eUV6UiLW2LtooKgM42y6izVTA2YKoXTbvg=
   bucket: rbiswaswithlsst
-  skip_cleanup: true
   local-dir: fails
-  upload-dir: "$d"
-  # acl: ''
+  upload-dir: '"$d"'
+  acl: ''
   on:
     repo: rbiswas4/sims_maf_contrib
     branch: ci-noPR
