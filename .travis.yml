@@ -25,9 +25,8 @@ deploy:
   provider: s3
   access_key_id: AKIAIYCAQSKSL463N6ZA
   secret_access_key:
-    secure: F4YEAfmLJ91GTBMl4BYQuCUS3k/I9GnsfmFS1ACiIuLFhSrmZQZV3xRCHM9L+T4TrU+l031CvvCh/s968xvTxdMgwkp1RAPpSrM/0n/6Nrw6MD72rO2V5YBEy/uuinanr+p7IA963eUV6UiLW2LtooKgM42y6izVTA2YKoXTbvg=
-  bucket: rbiswaswithlsst
-  skip_cleanup: true
+    secure: fZSbF9uCtfT71Sh/1R9OpdeF87IXPAKHKdsNL7iQWkgAif/c5zwxU+8potzfSgT5E4FpYJtQisxxnfG3GTFZaELp+XwlRRGDdF6gO2C0BbwXqyPsVHNNru111r0kSb/cv/EYGNauMF7k+P8zNZ3At3aDyZ7NuKn4xh9CefQIPCo=
+  bucket: rbiswasmaf
   local-dir: fails
   upload-dir: '"$d"'
   on:
