@@ -8,9 +8,13 @@ df -kh .
 echo 'installing sims-maf'
 
 conda install lsst-sims-maf > /dev/null 2>&1
-
+conda remove -y -q lsst-sims-sed-library > /dev/null 2>&1
+conda remove -y -q lsst-sims-dustmaps > /dev/null 2&>1
+conda clean -y -t -p -s > /dev/null 2>&1
 echo 'done installing sims-maf'
 source eups-setups.sh
+eups declare -m none -r none sims_sed_library 2014.10.06
+eups declare -m none -r none sims_dustmaps 0.10.1
 setup sims_maf
 
 
