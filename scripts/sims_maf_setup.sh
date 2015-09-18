@@ -18,6 +18,7 @@ source eups-setups.sh
 echo 'eups setup done'
 eups declare -m none -r none sims_sed_library 2014.10.06
 eups declare -m none -r none sims_dustmaps 0.10.1
+eups declare -m none -r none sims_dustmaps 10.1-1-g57fdb73
 echo 'eups declare remove done'
 setup sims_maf
 
