@@ -37,6 +37,7 @@ class SnDiscoveryMetric(TransientMetric):
         self.nPerLC = nPerLC
         self.nFilters = nFilters
         self.nPhaseCheck = nPhaseCheck
+        self._sn = None
 
     @staticmethod
     def _group_into_separate_lc(time, filters):
@@ -71,16 +72,36 @@ class SnDiscoveryMetric(TransientMetric):
 	"""
 
 	"""
-
-        filters = list('lsst_' + b for b in filters)
-	time, bands = self._group_into_separate_lc(time, filters)
+        ord = time.argsort()
+        rev_order = ord.argsort()
+        time = time[ord]
+        filters = filters[ord]
         sn = SNObject(ra=53.0, dec=-27.4)
+        self._sn = sn
         sn.set(z=0.1)
-        sn.set_source_peakabsmag(-19.3, 'BessellB', 'ab')
         sn.set(t0=self.peakTime)
-	mags = []
-	for t, b in zip(time, bands):
-	    mags.append(sn.bandmag(time=t, band=b, magsys='ab').tolist())
-	    
-        return np.asarray(mags).flatten()
+        sn.set_source_peakabsmag(-19.3, 'BessellB', 'ab')
+        #        try:
+        #            assert np.diff(time) >=0.
+        #        except:
+        #            pass
+        #            # print(time)
+        #        filters = list('lsst_' + b for b in filters)
+        #	time, bands = self._group_into_separate_lc(time, filters)
+        #        # print('diffs pos', all(list(all(x == 1) for x in 
+        #        #           map(np.diff, time))))
+        #        sn = SNObject(ra=53.0, dec=-27.4)
+        #        sn.set(z=0.1)
+        #        sn.set_source_peakabsmag(-19.3, 'BessellB', 'ab')
+        #        sn.set(t0=self.peakTime)
+        #	mags = []
+        #	for t, b in zip(time, bands):
+        #	    mags.append(sn.bandmag(time=t, band=b, magsys='ab').tolist())
+        #	    
+        #        magvals = np.asarray(mags).flatten()
+        #        return magvals[rev_order]
+        filters = list('lsst_' + b for b in filters)
+        magvals = sn.bandmag(time=time, band=filters, magsys='ab')
+        return magvals[rev_order]
+
 
